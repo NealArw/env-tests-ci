@@ -19,10 +19,11 @@ secrets:
     external: true               # indicates value is external to this repository
     name: "test"        # i.e., value should be added in the Uffizzi Dashboard
 
-x-uffizzi-ingress:
-  service: web
-  port: 80
-continuous_preview:
+x-uffizzi:
+  ingress:
+    service: web
+    port: 80
+  continuous_preview:
     share_to_github: true
     delete_preview_after: 3h
     delete_preview_when_pull_request_is_closed: true
